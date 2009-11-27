@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.dropbox.js"></script>
+
+	<title>Dropbox Test</title>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#dropbox').dropbox({
+			callback: function(f) {
+				$(f).each(function(idx, data) {
+					$('#log').append('<p>' + data.name + '</p>');
+				});
+			}
+		});
+
+	});
+	</script>
+</head>
+<body>
+<h1>Dropbox</h1>
+<div id="dropbox" style="border: 1px solid #990000; width: 500px; height: 200px;">Drop something here</div>
+
+<h1>You have dropped</h1>
+<div id="log"></div>
+</body>
+</html>
