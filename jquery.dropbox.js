@@ -16,8 +16,8 @@ jQuery.fn.dropbox = function(config) {
 		e.stopPropagation();
 		e.preventDefault();
 
-		if (files && files.length > 0 && config.callback !== undefined) {
-			config.callback(files);
+		if (files && files.length > 0 && config.onDrop !== undefined) {
+			config.onDrop(files);
 		}
 	};
 
